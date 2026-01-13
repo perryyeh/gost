@@ -1,0 +1,14 @@
+services:
+  gost:
+    image: gogost/gost:latest
+    container_name: gost
+    network_mode: "container:mihomo"   # 依附 mihomo（POP IP）
+    volumes:
+      - ./:/etc/gost  
+    restart: unless-stopped
+
+  gost-ui:
+    image: gogost/gost-ui:latest
+    container_name: gost-ui
+    network_mode: "container:mihomo" 
+    restart: unless-stopped
