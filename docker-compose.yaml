@@ -12,3 +12,7 @@ services:
     container_name: gost-ui
     network_mode: "container:mihomo" 
     restart: unless-stopped
+
+networks:
+  macvlan:
+    external: true
