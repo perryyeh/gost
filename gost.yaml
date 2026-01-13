@@ -1,0 +1,28 @@
+services:
+  - name: nas 15001
+    addr: :15001
+    handler:
+      type: tcp
+    listener:
+      type: tcp
+    forwarder:
+      nodes:
+        - name: nas drive
+          addr: 10.0.0.100:5001
+    status:
+      createTime: 1768303613
+      state: ready
+      events:
+        - time: 1768303613
+          msg: service nas 15001 is running
+        - time: 1768303613
+          msg: service nas 15001 is ready
+        - time: 1768303613
+          msg: service nas 15001 is listening on [::]:15001
+api:
+  addr: :18080
+  pathPrefix: /api
+  accesslog: true
+  auth:
+    username: admin
+    password: admin
